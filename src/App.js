@@ -17,9 +17,8 @@ const App = ()=>{
     getData();
   }, []);
 
-  const onHandleCountryChange =async (country)=>{
+  const onHandleCountryChange = async (country)=>{
     const data = await fetchData(country);
-    console.log(data)
     setMainData(data);
     setCountry(country)
   }
@@ -32,7 +31,7 @@ const App = ()=>{
     mainData && (<div className={styles.container}>
       <Cards data={mainData}/>
       <CountryPicker data={mainData} onHandleCountryChange={onHandleCountryChange}/>
-      <Chart data={mainData}/>
+      <Chart data={mainData} country={country}/>
     </div>)
   )
 }
