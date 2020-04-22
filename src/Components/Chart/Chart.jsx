@@ -33,7 +33,6 @@ const Chart  = ({ data, country})=>{
     }}
     />
 
-    console.log(data.confirmed.value, data.recovered.value, data.deaths.value)
     const barChar = data && (
         <Bar 
             data={{
@@ -44,9 +43,9 @@ const Chart  = ({ data, country})=>{
                         "rgba(0, 0, 255, 0.5)",
                         "rgba(0, 255, 0, 0.5)",
                         "rgba(255, 0, 0, 0.5)"
-                    ]
+                    ],
+                    data: [data.confirmed.value, data.recovered.value, data.deaths.value]
                 }],
-                data: [data.confirmed.value, data.recovered.value, data.deaths.value]
             }}
 
             options={{

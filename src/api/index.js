@@ -5,7 +5,7 @@ const url = 'https://covid19.mathdro.id/api';
 
 export const fetchData = async (country)=>{
     let URI;
-    country ? URI=`${url}/countries/${country}` : URI= url;
+    (country && country.length > 0 ) ? URI=`${url}/countries/${country}` : URI= url;
 
     try{
         const res = await axios.get(URI);
